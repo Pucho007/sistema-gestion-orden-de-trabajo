@@ -1,7 +1,7 @@
 <div [class]="'app-sidebar sidebar-shadow ' + (config$ | async).sidebarTheme" (mouseover)="sidebarHover()"
      (mouseout)="sidebarHover()">
   <div class="app-header__logo">
-    <div class="logo-src"></div>
+    <!-- <div class="logo-src"></div> -->
     <div class="header__pane ms-auto">
       <button type="button" class="hamburger close-sidebar-btn hamburger--elastic"
               [ngClass]="{'is-active' : globals.toggleSidebar}" (click)="toggleSidebar()">
@@ -16,10 +16,24 @@
       <perfect-scrollbar [autoPropagation]="true">
         <div class="v-sidebar-menu vsm-default">
           <div class="vsm-list">
-            <ngb-accordion [destroyOnHide]="false" [closeOthers]="true" [activeIds]="extraParameter">
+            <div class="vsm-header">MENU</div>
+            <div class="vsm-item">
+              <a routerLink="" routerLinkActive="active-item"
+                  [routerLinkActiveOptions]="{exact: true}" class="vsm-link">
+                  <i class="vsm-icon fa-files-o "></i>
+                  <span class="vsm-title">Dashboards</span>
+              </a>
+            </div>
+            <div class="vsm-item">
+              <a routerLinkActive="active-item" routerLink="/tables/bootstrap" class="vsm-link">
+                <i class="vsm-icon pe-7s-graph1"></i>
+                <span class="vsm-title">Ordenes de Trabajo</span>
+              </a>
+            </div>
+            <!-- <ngb-accordion [destroyOnHide]="false" [closeOthers]="true" [activeIds]="extraParameter">
               <ngb-panel>
                 <ng-template ngbPanelHeader>
-                  <div class="vsm-header">Main Navigation</div>
+                  <div class="vsm-header">Menu</div>
                 </ng-template>
               </ngb-panel>
               <ngb-panel id="dashboardsMenu">
@@ -127,7 +141,7 @@
                       <div class="vsm-item">
                         <a routerLinkActive="active-item" routerLink="/components/tabs" class="vsm-link"><span
                           class="vsm-title">Tabs</span></a>
-                      </div> 
+                      </div>
                       <div class="vsm-item">
                         <a routerLinkActive="active-item" routerLink="/components/accordions" class="vsm-link"> <span
                           class="vsm-title">Accordions</span></a>
@@ -224,13 +238,13 @@
                 </ng-template>
               </ngb-panel>
             </ngb-accordion>
-            <div class="vsm-header">Charts</div>
+            <div class="vsm-header">MENU</div>
             <div class="vsm-item">
               <a routerLink="/charts/chartjs" routerLinkActive="active-item" class="vsm-link">
-                <i class="vsm-icon pe-7s-graph2"></i>
-                <span class="vsm-title">ChartJS</span>
+                <i class="vsm-icon pe-7s-rocket"></i>
+                <span class="vsm-title">Dashboard</span>
               </a>
-            </div>
+            </div> -->
           </div>
         </div>
       </perfect-scrollbar>

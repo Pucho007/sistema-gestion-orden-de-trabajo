@@ -2,14 +2,14 @@ import {Component, HostBinding} from '@angular/core';
 import {select} from '@angular-redux/store';
 import {Observable} from 'rxjs';
 import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
-import { ThemeOptions } from 'src/app/theme-options';
+import {ThemeOptions} from '../../../theme-options';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+
   faEllipsisV = faEllipsisV;
 
   constructor(public globals: ThemeOptions) {
@@ -20,9 +20,9 @@ export class HeaderComponent {
     return this.isActive;
   }
 
-  isActive!: boolean;
+  isActive: boolean;
 
-  @select('config') public config$!: Observable<any>;
+  @select('config') public config$: Observable<any>;
 
   toggleSidebarMobile() {
     this.globals.toggleSidebarMobile = !this.globals.toggleSidebarMobile;
@@ -31,4 +31,5 @@ export class HeaderComponent {
   toggleHeaderMobile() {
     this.globals.toggleHeaderMobile = !this.globals.toggleHeaderMobile;
   }
+
 }

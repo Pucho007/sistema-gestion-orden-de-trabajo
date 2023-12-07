@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
-  title = 'sistema-gestion-ordenes-trabajo-rep';
+  title = 'ArchitectUI - Angular 7 Bootstrap 5 & Material Design Admin Dashboard Template';
 }

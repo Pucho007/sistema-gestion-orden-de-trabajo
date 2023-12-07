@@ -1,16 +1,17 @@
-import { Component, Input } from '@angular/core';
-// import { faStar, faPlus } from '@fortawesome/free-solid-svg-icons';
+import {Component, Input} from '@angular/core';
+import { faStar, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-page-title',
   templateUrl: './page-title.component.html',
-  styleUrls: ['./page-title.component.css']
 })
 export class PageTitleComponent {
-  // faStar = faStar;
-  // faPlus = faPlus;
 
-  // @Input() heading;
-  // @Input() subheading;
-  // @Input() icon;
+  faStar = faStar;
+  faPlus = faPlus;
+
+  @Input() heading;
+  @Input() subheading;
+  @Input() icon;
+
 }

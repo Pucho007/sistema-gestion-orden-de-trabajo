@@ -5,12 +5,11 @@ import {ConfigActions} from '../../ThemeOptions/store/config.actions';
 import {ThemeOptions} from '../../theme-options';
 import {animate, query, style, transition, trigger} from '@angular/animations';
 
-
 @Component({
   selector: 'app-base-layout',
   templateUrl: './base-layout.component.html',
-  styleUrls: ['./base-layout.component.css'],
-  animations:[
+  animations: [
+
     trigger('architectUIAnimation', [
       transition('* <=> *', [
         query(':enter, :leave', [
@@ -34,9 +33,10 @@ import {animate, query, style, transition, trigger} from '@angular/animations';
     ])
   ]
 })
+
 export class BaseLayoutComponent {
 
-  @select('config') public config$!: Observable<any>;
+  @select('config') public config$: Observable<any>;
 
   constructor(public globals: ThemeOptions, public configActions: ConfigActions) {
   }
@@ -45,3 +45,6 @@ export class BaseLayoutComponent {
     this.globals.toggleSidebarMobile = !this.globals.toggleSidebarMobile;
   }
 }
+
+
+

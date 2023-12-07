@@ -1,25 +1,24 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
+import {ThemeOptions} from '../../../theme-options';
 import {select} from '@angular-redux/store';
 import {Observable} from 'rxjs';
 import {ActivatedRoute} from '@angular/router';
-import { ThemeOptions } from 'src/app/theme-options';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css']
 })
-export class SidebarComponent implements OnInit{
+export class SidebarComponent implements OnInit {
   public extraParameter: any;
 
   constructor(public globals: ThemeOptions, private activatedRoute: ActivatedRoute) {
 
   }
 
-  @select('config') public config$!: Observable<any>;
+  @select('config') public config$: Observable<any>;
 
-  private newInnerWidth!: number;
-  private innerWidth!: number;
+  private newInnerWidth: number;
+  private innerWidth: number;
   activeId = 'dashboardsMenu';
 
   toggleSidebar() {
@@ -43,7 +42,7 @@ export class SidebarComponent implements OnInit{
   }
 
   @HostListener('window:resize', ['$event'])
-  onResize(event:any) {
+  onResize(event) {
     this.newInnerWidth = event.target.innerWidth;
 
     if (this.newInnerWidth < 1200) {
