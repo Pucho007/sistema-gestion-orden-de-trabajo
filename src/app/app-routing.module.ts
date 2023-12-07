@@ -55,12 +55,25 @@ import {ChartjsComponent} from './DemoPages/Charts/chartjs/chartjs.component';
 const routes: Routes = [
   {
     path: '',
+    component: PagesLayoutComponent,
+    children: [
+
+      // User Pages
+
+      {path: 'pages/login-boxed', component: LoginBoxedComponent, data: {extraParameter: ''}},
+      {path: 'pages/register-boxed', component: RegisterBoxedComponent, data: {extraParameter: ''}},
+      {path: 'pages/forgot-password-boxed', component: ForgotPasswordBoxedComponent, data: {extraParameter: ''}},
+      {path: '', component: LoginBoxedComponent, data: {extraParameter: ''}},
+    ]
+  },
+  {
+    path: '',
     component: BaseLayoutComponent,
     children: [
 
       // Dashboads
 
-      {path: '', component: AnalyticsComponent, data: {extraParameter: 'dashboardsMenu'}},
+      {path: 'dashboard', component: AnalyticsComponent, data: {extraParameter: 'dashboardsMenu'}},
 
       // Elements
 
@@ -101,19 +114,7 @@ const routes: Routes = [
     ]
 
   },
-  {
-    path: '',
-    component: PagesLayoutComponent,
-    children: [
-
-      // User Pages
-
-      {path: 'pages/login-boxed', component: LoginBoxedComponent, data: {extraParameter: ''}},
-      {path: 'pages/register-boxed', component: RegisterBoxedComponent, data: {extraParameter: ''}},
-      {path: 'pages/forgot-password-boxed', component: ForgotPasswordBoxedComponent, data: {extraParameter: ''}},
-    ]
-  },
-  {path: '**', redirectTo: ''}
+  {path: '**', redirectTo: 'pages/login-boxed'}
 ];
 
 @NgModule({
